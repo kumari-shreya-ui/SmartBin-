@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecogenesis - Smart Waste Segregation</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Eco<span>genesis</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#vision">Our Vision</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Smart Bin, Smart Segregation: Turning Waste into Resources</h1>
+    <p>Our Arduino and AI-powered prototype intelligently sorts waste, paving the way for a cleaner tomorrow.</p>
+  </section>
+
+  <section class="dashboard" id="dashboard">
+    <h2>Live Bin Status</h2>
+    <div class="bin-container">
+      <div class="bin-card" data-bin="Organic">
+        <div class="bin-card-header">
+          <img src="https://api.iconify.design/mdi:leaf.svg?color=%236CC5B3" alt="Organic Icon">
+          <h3>Organic</h3>
+        </div>
+        <p>Fill Level:</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 75%;">75%</div>
+        </div>
+        <p>Current Weight: <span class="weight-info">4.2 kg</span></p>
+      </div>
+      <div class="bin-card" data-bin="Recycle">
+        <div class="bin-card-header">
+          <img src="https://api.iconify.design/mdi:recycle.svg?color=%235BA0B9" alt="Recycle Icon">
+          <h3>Recycle</h3>
+        </div>
+        <p>Fill Level:</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 40%;">40%</div>
+        </div>
+        <p>Current Weight: <span class="weight-info">2.8 kg</span></p>
+      </div>
+      <div class="bin-card" data-bin="Hazardous">
+        <div class="bin-card-header">
+          <img src="https://api.iconify.design/mdi:biohazard.svg?color=%23E07A5F" alt="Hazardous Icon">
+          <h3>Hazardous</h3>
+        </div>
+        <p>Fill Level:</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 15%;">15%</div>
+        </div>
+        <p>Current Weight: <span class="weight-info">0.6 kg</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chart-container">
+    <h2>Waste Distribution</h2>
+    <div class="chart-box">
+      <canvas id="wasteChart"></canvas>
+    </div>
+  </section>
+
+  <section class="vision" id="vision">
+    <h2>How It Works: Our Vision</h2>
+    <div class="vision-diagram">
+      <div class="truck-body">
+        <div class="inlet-hopper">
+          <div class="waste-dot organic"></div>
+          <div class="waste-dot recycle"></div>
+          <div class="waste-dot hazardous"></div>
+        </div>
+        <div class="step-label" style="top: -50px; left: 60px;">1. Common Inlet</div>
+
+        <div class="conveyor-belt c1"></div>
+        <div class="step-label" style="top: 100px; left: -140px;">2. Vibration & Initial Feed</div>
+
+        <div class="scanning-station">
+          <div class="scanner-beam"></div>
+          <span>AI Scanning</span>
+        </div>
+        <div class="step-label" style="top: -50px; left: 350px;">3. AI-Powered Waste Detection</div>
+
+        <div class="conveyor-path">
+          <div class="conveyor-belt c2 organic"></div>
+          <div class="conveyor-belt c3 recycle"></div>
+          <div class="conveyor-belt c4 hazardous"></div>
+          <div class="conveyor-belt c5 uncertain"></div>
+        </div>
+        <div class="step-label" style="top: 100px; right: -150px;">4. Automated Conveyor Sorting</div>
+
+        <div class="bin-collection">
+          <div class="bin b-organic"><span>Organic</span><div class="bin-indicator"></div></div>
+          <div class="bin b-recycle"><span>Recycle</span><div class="bin-indicator"></div></div>
+          <div class="bin b-hazardous"><span>Hazardous</span><div class="bin-indicator full"></div></div>
+          <div class="bin b-uncertain"><span>Uncertain</span><div class="bin-indicator"></div></div>
+        </div>
+         <div class="step-label" style="bottom: -50px; left: 55%;">5. Segregated Collection Bins</div>
+      </div>
+      <div class="data-flow">
+        <div class="step-label" style="bottom: 50%; right: -210px; text-align: right;">6. Real-time Data Sent to Cloud & App</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Ecogenesis</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+              Ecogenesis is a project dedicated to solving modern waste management challenges through technology. 
+              Our smart bin prototype uses sensors and intelligent sorting mechanisms to automatically segregate 
+              waste into organic, recyclable, and hazardous materials. By providing real-time data, we aim to 
+              optimize collection routes, promote recycling, and create a more sustainable future for our communities.
+            </p>
+            <p>
+              <strong>Our future plans include a dedicated mobile app</strong> that will allow municipal corporations and users to track the current fill status of the bins in real-time, receive alerts when bins are full, and view detailed analytics on waste collection.
+            </p>
+        </div>
+        <div class="app-logo-container">
+            <img src="images/app-logo.jpeg" alt="Eco-Mitra App Logo" class="app-logo">
+            <span>Eco-Mitra App Logo</span>
+        </div>
+    </div>
+  </section>
+
+  <section class="tech-stack">
+    <h2>Technology Behind Ecogenesis</h2>
+    <div class="tech-grid">
+       <div class="tech-item">
+        <img src="https://api.iconify.design/devicon:arduino.svg" alt="Arduino Icon">
+        <h3>Arduino</h3>
+      </div>
+      <div class="tech-item">
+        <img src="https://api.iconify.design/mdi:robot-industrial.svg?color=%233E5F5A" alt="AI/ML Icon">
+        <h3>AI Sorting</h3>
+      </div>
+      <div class="tech-item">
+        <img src="https://api.iconify.design/devicon:html5.svg" alt="HTML5 Icon">
+        <h3>HTML5</h3>
+      </div>
+      <div class="tech-item">
+        <img src="https://api.iconify.design/devicon:css3.svg" alt="CSS3 Icon">
+        <h3>CSS3</h3>
+      </div>
+      <div class="tech-item">
+        <img src="https://api.iconify.design/devicon:javascript.svg" alt="JavaScript Icon">
+        <h3>JavaScript</h3>
+      </div>
+    </div>
+  </section>
+
+  <div id="info-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modal-title">Bin Details</h2>
+      <p id="modal-details">Some information here.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ecogenesis. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
